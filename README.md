@@ -109,7 +109,6 @@ Update the project settings in settings.py with your specific configurations:
 ## Testing
 Run the tests to ensure that the API functions correctly:
 
-    ```bash
     python manage.py test
 
 ## Bonus Features
