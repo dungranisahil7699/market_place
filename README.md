@@ -17,8 +17,6 @@ This project is a Django-based online marketplace API where users can buy and se
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
 - [Bonus Features](#bonus-features)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
