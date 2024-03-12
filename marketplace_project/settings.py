@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'marketplace_app',
     'rest_framework_simplejwt',
     'django_filters',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
@@ -55,7 +56,7 @@ REST_FRAMEWORK = {
 
 # JWT Token Configuration
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=2),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5), # Set Token Expire Time What you want
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -91,7 +92,7 @@ ROOT_URLCONF = 'marketplace_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -187,3 +188,15 @@ if os.environ.get('DJANGO_DEVELOPMENT', '') == 'True':
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Swagger Authorization Setting
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'apikey': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+}
