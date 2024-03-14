@@ -62,12 +62,12 @@ class PurchaseCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(buyer=self.request.user)
 
-        # Send email notification
-        subject = 'Purchase Confirmation'
-        message = 'Thank you for your purchase!'
-        from_email = EMAIL_HOST_USER
-        to_email = [self.request.user.email]
-        send_mail(subject, message, from_email, to_email)
+        # # Send email notification
+        # subject = 'Purchase Confirmation'
+        # message = 'Thank you for your purchase!'
+        # from_email = EMAIL_HOST_USER
+        # to_email = [self.request.user.email]
+        # send_mail(subject, message, from_email, to_email)
 
 
 class ProductListView(generics.ListAPIView):
