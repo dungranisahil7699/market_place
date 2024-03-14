@@ -193,7 +193,8 @@ if os.environ.get('DJANGO_DEVELOPMENT', '') == 'True':
 # Swagger Authorization Setting
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
-        'apikey': {
+        'api_key': {
+            'description': 'Enter your token in this format: Bearer {your token}',
             'type': 'apiKey',
             'in': 'header',
             'name': 'Authorization'
